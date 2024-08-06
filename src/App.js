@@ -10,6 +10,10 @@ function App() {
 
   const manejarClic = () => {
     setNumClics(numClics + 1);
+
+  }
+  const RestarClics = () => {
+    setNumClics(numClics - 1)
   }
 
   const reiniciarContador = () => {
@@ -19,21 +23,25 @@ function App() {
   return (
     <div className='App'>
       <div className='freecodecamp-logo-contenedor'>
-        <img 
+        <img
           className='freecodecamp-logo'
           src={freeCodeCampLogo}
           alt='Logo de freeCodeCamp' />
       </div>
       <div className='contenedor-principal'>
         <Contador numClics={numClics} />
-        <Boton 
-          texto='Clic'
-          esBotonDeClic={true}
+        <Boton
+          texto='Sumar'
+          esBotonDeClic="1"
           manejarClic={manejarClic} />
-        <Boton 
+        <Boton
           texto='Reiniciar'
-          esBotonDeClic={false}
+          esBotonDeClic="2"
           manejarClic={reiniciarContador} />
+        <Boton
+          texto='Restar'
+          esBotonDeClic="3"
+          manejarClic={RestarClics} />
       </div>
     </div>
   );
